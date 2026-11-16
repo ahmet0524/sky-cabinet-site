@@ -301,7 +301,7 @@ nav.main a.active{color:var(--leaf);text-decoration:underline;text-underline-off
 
 .visit2{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
 .mapcard{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#eef5f2}
-.mapcard svg{display:block;width:100%;height:auto}
+.mapcard iframe{display:block;width:100%;aspect-ratio:6/5;min-height:300px;border:0}
 @media (max-width:900px){.visit2{grid-template-columns:1fr}}
 
 .cta-band{background:var(--navy);color:#eef4f2}
