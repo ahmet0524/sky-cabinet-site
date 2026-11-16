@@ -198,6 +198,10 @@ footer.site .brand .cabw{font-size:.8rem}
 footer.site .brand .kb{font-size:.55rem}
 footer.site .legal{display:block;border-top:1px solid rgba(255,255,255,.15);padding-block:16px;opacity:.75;font-size:.8rem}
 footer.site .legal a{color:inherit}
+.ig{display:inline-flex;align-items:center;gap:6px;color:inherit;vertical-align:middle}
+.ig svg{flex:none}
+footer.site a.social{justify-self:start;text-decoration:none;font-weight:600;opacity:.9}
+footer.site a.social:hover{opacity:1;text-decoration:underline}
 @media (max-width:760px){footer.site .wrap{grid-template-columns:1fr 1fr}}
 
 /* floating call/text button */
