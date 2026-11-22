@@ -12,10 +12,12 @@ interface Props {
   noindex?: boolean;
   home?: boolean;
   ogType?: string;
+  /** Absolute URL of the link-preview image; defaults to the site image. */
+  ogImage?: string;
   /** JSON-LD objects to emit. */
   schema?: object[];
 }
-const { title, description = DEFAULT_DESCRIPTION, path, noindex = false, home = false, ogType = 'website', schema = [] } = Astro.props;
+const { title, description = DEFAULT_DESCRIPTION, path, noindex = false, home = false, ogType = 'website', ogImage = OG_IMAGE, schema = [] } = Astro.props;
 const canonical = SITE_URL + path;
 const favicon = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f3550'/%3E%3Cpath d='M5 20 L16 8 L27 20 L16 12 Z' fill='%23d9b48a'/%3E%3Crect x='8' y='21' width='16' height='3' rx='1' fill='%23ffffff'/%3E%3C/svg%3E";
 ---
@@ -40,7 +42,7 @@ const favicon = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
 <meta property="og:title" content={title}>
 <meta property="og:description" content={description}>
 <meta property="og:url" content={canonical}>
-<meta property="og:image" content={OG_IMAGE}>
+<meta property="og:image" content={ogImage}>
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">

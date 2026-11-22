@@ -27,7 +27,7 @@ const articleSchema = {
   publisher: { '@id': `${SITE_URL}/#business` },
 };
 ---
-<Base title={`${title} | SKY Cabinet`} description={description} path={path} ogType="article" schema={[articleSchema]}>
+<Base title={`${title} | SKY Cabinet`} description={description} path={path} ogType="article" ogImage={image ? SITE_URL + image : OG_IMAGE} schema={[articleSchema]}>
 <section class="page-head"><div class="wrap">
   <a class="eyebrow" href="/blog/">Blog</a>
   <h1>{title}</h1>
