@@ -17,7 +17,7 @@ npm run build    # production build into dist/
 | Address, phone, hours, cities, Instagram, LocalBusiness schema | `src/consts.ts` (change once, every page updates) |
 | `<head>`, Google tag (GTM-KSP6328V), click events | `src/layouts/Base.astro` |
 | Top bar, header, footer | `src/components/Header.astro`, `Footer.astro` |
-| Pages | `src/pages/*.astro` (`privacy.astro` → `/privacy.html`) |
+| Pages | `src/pages/*.astro` (`privacy.astro` → `/privacy`) |
 | CSS, images, robots.txt | `public/` |
 | Sitemap (`/sitemap.xml`) | `src/pages/sitemap.xml.ts` — add new static pages to `STATIC_PAGES`; blog posts are added automatically |
 

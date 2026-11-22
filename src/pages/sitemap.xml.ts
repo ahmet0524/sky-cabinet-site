@@ -4,7 +4,7 @@ import { getPosts, postPath } from '../posts';
 
 // Same URL Search Console already has: https://www.skycabinetva.com/sitemap.xml
 // New pages: add them to STATIC_PAGES. Blog posts are picked up automatically.
-const STATIC_PAGES = ['/', '/privacy.html', '/sms-terms.html'];
+const STATIC_PAGES = ['/', '/privacy', '/sms-terms'];
 
 export const GET: APIRoute = async () => {
   const posts = await getPosts();

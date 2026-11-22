@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://www.skycabinetva.com',
-  // Keep the live URLs: privacy.astro -> /privacy.html, blog/[slug]/index.astro -> /blog/<slug>/
+  // privacy.astro -> privacy.html, served by Netlify as /privacy (pretty URLs). Canonicals and the sitemap use /privacy.
   build: { format: 'preserve' },
   trailingSlash: 'ignore',
 });

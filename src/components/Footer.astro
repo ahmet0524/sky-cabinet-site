@@ -14,13 +14,13 @@ const { home = false } = Astro.props;
         <a class="ig social" href={BIZ.instagram} target="_blank" rel="noopener"><InstagramIcon size={20} id="igg2" /><span>{BIZ.instagramHandle}</span></a>
       </div>
       <div><h4>Explore</h4><ul><li><a href="#styles">Door styles</a></li><li><a href="#paths">Cabinets &amp; install</a></li><li><a href="#services">Services</a></li><li><a href="#process">How it works</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-      <div><h4>Get started</h4><ul><li><a href="#samples">Free door samples</a></li><li><a href="#consult">3D design appointment</a></li><li><a href="#contact">Written quote</a></li><li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/sms-terms.html">SMS Terms</a></li></ul></div>
+      <div><h4>Get started</h4><ul><li><a href="#samples">Free door samples</a></li><li><a href="#consult">3D design appointment</a></li><li><a href="#contact">Written quote</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/sms-terms">SMS Terms</a></li></ul></div>
       <div><h4>Visit</h4><ul><li>{BIZ.street}</li><li>{BIZ.city}, {BIZ.region} {BIZ.zip}</li><li>{BIZ.hours}</li><li><a href={`tel:${BIZ.phoneTel}`}>{BIZ.phoneDisplay}</a></li><li><a href={`mailto:${BIZ.email}`}>{BIZ.email}</a></li></ul></div>
     </div>
-    <div class="wrap legal">© 2026 SKY Cabinet · SKY Cabinet is a trade name of KLF Trading LLC · <a href="/privacy.html">Privacy Policy</a> · <a href="/sms-terms.html">SMS Terms</a></div>
+    <div class="wrap legal">© 2026 SKY Cabinet · SKY Cabinet is a trade name of KLF Trading LLC · <a href="/privacy">Privacy Policy</a> · <a href="/sms-terms">SMS Terms</a></div>
   </footer>
 ) : (
   <footer class="site">
-    <div class="wrap legal">© 2026 SKY Cabinet · SKY Cabinet is a trade name of KLF Trading LLC · {BIZ.street}, {BIZ.city}, {BIZ.region} {BIZ.zip} · <a href={`tel:${BIZ.phoneTel}`}>{BIZ.phoneDisplay}</a> · <a class="ig" href={BIZ.instagram} target="_blank" rel="noopener"><InstagramIcon size={14} id="igg1" /> Instagram</a> · <a href="/privacy.html">Privacy Policy</a> · <a href="/sms-terms.html">SMS Terms</a></div>
+    <div class="wrap legal">© 2026 SKY Cabinet · SKY Cabinet is a trade name of KLF Trading LLC · {BIZ.street}, {BIZ.city}, {BIZ.region} {BIZ.zip} · <a href={`tel:${BIZ.phoneTel}`}>{BIZ.phoneDisplay}</a> · <a class="ig" href={BIZ.instagram} target="_blank" rel="noopener"><InstagramIcon size={14} id="igg1" /> Instagram</a> · <a href="/privacy">Privacy Policy</a> · <a href="/sms-terms">SMS Terms</a></div>
   </footer>
 )}
