@@ -30,7 +30,16 @@ const favicon = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 </script>
-<script is:inline>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'',ev=null;if(h.indexOf('tel:')===0)ev='phone_call_click';else if(h.indexOf('mailto:')===0)ev='email_click';else if(h.indexOf('google.com/maps')>-1)ev='get_directions';else if(h.indexOf('instagram.com')>-1)ev='instagram_click';if(ev)gtag('event',ev,{link_url:h});});</script>
+<!-- Google Tag Manager (GTM-PT6BKS26): Ads / Meta / other tags live here. Do NOT add a GA4 tag in it — GA4 already comes from GTM-KSP6328V above, it would double count. -->
+<script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PT6BKS26');</script>
+<!-- End Google Tag Manager -->
+<!-- skyTrack(name, params): one call sends the event to GA4 (gtag) AND to Tag Manager (dataLayer custom event). -->
+<script is:inline>function skyTrack(ev,p){p=p||{};gtag('event',ev,p);var o={event:ev};for(var k in p)o[k]=p[k];dataLayer.push(o);}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'',ev=null;if(h.indexOf('tel:')===0)ev='phone_call_click';else if(h.indexOf('mailto:')===0)ev='email_click';else if(h.indexOf('google.com/maps')>-1)ev='get_directions';else if(h.indexOf('instagram.com')>-1)ev='instagram_click';if(ev)skyTrack(ev,{link_url:h});});</script>
 <slot name="head-scripts" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -55,6 +64,9 @@ const favicon = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
 {schema.map((s) => <script is:inline type="application/ld+json" set:html={JSON.stringify(s)} />)}
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT6BKS26" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <Header home={home} />
 <main id={home ? 'main' : undefined}>
 <slot />
