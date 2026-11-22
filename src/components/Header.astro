@@ -1,0 +1,41 @@
+---
+// home = the one-page landing layout with in-page nav; otherwise the compact inner-page header.
+import { BIZ } from '../consts';
+import Brand from './Brand.astro';
+import InstagramIcon from './InstagramIcon.astro';
+interface Props { home?: boolean }
+const { home = false } = Astro.props;
+---
+{home ? (
+  <Fragment>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="util"><div class="wrap">
+      <span>Norfolk showroom · {BIZ.hours}</span>
+      <span><a href={`tel:${BIZ.phoneTel}`}>Call or text {BIZ.phoneDisplay}</a><span class="dot">|</span><a href={`mailto:${BIZ.email}`}>{BIZ.email}</a><span class="dot">|</span><a class="ig" href={BIZ.instagram} target="_blank" rel="noopener" aria-label="SKY Cabinet on Instagram"><InstagramIcon size={15} id="igg1" /></a></span>
+    </div></div>
+    <header class="site"><div class="wrap">
+      <Brand />
+      <nav class="main" id="nav" aria-label="Main">
+        <a href="#styles">Door Styles</a>
+        <a href="#samples">Free Samples</a>
+        <a href="#paths">Cabinets &amp; Install</a>
+        <a href="#process">How It Works</a>
+        <a href="#visit">Visit Us</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn primary" href="#contact">Free Design &amp; Quote</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    </div></header>
+  </Fragment>
+) : (
+  <Fragment>
+    <div class="util"><div class="wrap">
+      <span>Serving Virginia Beach &amp; Hampton Roads · {BIZ.hours}</span>
+      <span>Call or text <a href={`tel:${BIZ.phoneTel}`}>{BIZ.phoneDisplay}</a></span>
+    </div></div>
+    <header class="site"><div class="wrap">
+      <Brand />
+      <a class="btn primary" href="/#contact">Free Estimate</a>
+    </div></header>
+  </Fragment>
+)}

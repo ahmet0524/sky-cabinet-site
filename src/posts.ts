@@ -1,0 +1,12 @@
+import { getCollection } from 'astro:content';
+
+/** Published posts, newest first. Drafts are included only in `npm run dev`. */
+export async function getPosts() {
+  const posts = await getCollection('blog', ({ data }) => import.meta.env.DEV || !data.draft);
+  return posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+}
+
+export const postPath = (id: string) => `/blog/${id}/`;
+
+export const formatDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });

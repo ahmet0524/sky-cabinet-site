@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getPosts, postPath, formatDate } from '../../posts';
+const posts = await getPosts();
+---
+<Base
+  title="Kitchen & Bath Cabinet Blog | SKY Cabinet, Norfolk VA"
+  description="Cabinet styles, colors, layouts and remodeling advice from the SKY Cabinet showroom in Norfolk, VA."
+  path="/blog/"
+  noindex={posts.length === 0}
+>
+<section class="page-head"><div class="wrap">
+  <span class="eyebrow">Blog</span>
+  <h1>Ideas for your kitchen and bath</h1>
+</div></section>
+<div class="wrap"><div class="legal-doc">
+  {posts.length === 0 ? (
+    <p class="lead" style="max-width:none">Our first articles are on the way. In the meantime, <a href="/#contact">ask us anything</a> or call <a href="tel:+17577979004">(757) 797-9004</a>.</p>
+  ) : (
+    <ul class="post-list">
+      {posts.map((p) => (
+        <li>
+          <a href={postPath(p.id)}><h2>{p.data.title}</h2></a>
+          <p class="post-meta"><time datetime={p.data.pubDate.toISOString()}>{formatDate(p.data.pubDate)}</time></p>
+          <p>{p.data.description}</p>
+        </li>
+      ))}
+    </ul>
+  )}
+</div></div>
+</Base>
