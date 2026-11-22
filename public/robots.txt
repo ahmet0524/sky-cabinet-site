@@ -1,3 +1,114 @@
+# robots.txt for https://www.skycabinetva.com
+# SKY Cabinet Kitchen & Bath, Norfolk, VA
+#
+# Policy: the whole site is open to search engines AND to AI assistants,
+# AI search engines and AI training crawlers. We want SKY Cabinet to be
+# found and cited when people ask about kitchen cabinets in Hampton Roads.
+#
+# The thank-you page is deliberately NOT blocked here: it carries
+# <meta name="robots" content="noindex">, and crawlers must be able to
+# fetch it to see that tag.
+#
+# A plain-text summary of the business for LLMs: /llms.txt
+
+# ---------- Search engines ----------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ---------- OpenAI (ChatGPT) ----------
+# GPTBot = training, OAI-SearchBot = ChatGPT search, ChatGPT-User = live browsing for a user
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# ---------- Anthropic (Claude) ----------
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# ---------- Google AI (Gemini; opt-in for AI training) ----------
+User-agent: Google-Extended
+Allow: /
+
+# ---------- Apple Intelligence ----------
+User-agent: Applebot-Extended
+Allow: /
+
+# ---------- Perplexity ----------
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ---------- Microsoft Copilot uses Bingbot (above) ----------
+
+# ---------- Meta AI ----------
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: meta-externalfetcher
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# ---------- Amazon (Alexa, Rufus) ----------
+User-agent: Amazonbot
+Allow: /
+
+# ---------- DuckDuckGo AI answers ----------
+User-agent: DuckAssistBot
+Allow: /
+
+# ---------- Mistral (Le Chat) ----------
+User-agent: MistralAI-User
+Allow: /
+
+# ---------- Cohere ----------
+User-agent: cohere-ai
+Allow: /
+
+User-agent: cohere-training-data-crawler
+Allow: /
+
+# ---------- You.com ----------
+User-agent: YouBot
+Allow: /
+
+# ---------- Common Crawl (feeds many open AI models) ----------
+User-agent: CCBot
+Allow: /
+
+# ---------- Everyone else ----------
 User-agent: *
 Allow: /
 
