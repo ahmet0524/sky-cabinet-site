@@ -37,8 +37,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PT6BKS26');</script>
 <!-- End Google Tag Manager -->
-<!-- skyTrack(name, params): one call sends the event to GA4 (gtag) AND to Tag Manager (dataLayer custom event). -->
-<script is:inline>function skyTrack(ev,p){p=p||{};gtag('event',ev,p);var o={event:ev};for(var k in p)o[k]=p[k];dataLayer.push(o);}
+<!-- Meta Pixel 1156467100307392. Do NOT also add a Meta pixel tag inside GTM-PT6BKS26, it would double count. -->
+<script is:inline>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1156467100307392');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<!-- skyTrack(name, params): one call sends the event to GA4 (gtag), Tag Manager (dataLayer) AND the Meta pixel (standard event where one fits). -->
+<script is:inline>var SKY_META={generate_lead:'Lead',phone_call_click:'Contact',email_click:'Contact',get_directions:'FindLocation'};
+function skyTrack(ev,p){p=p||{};gtag('event',ev,p);var o={event:ev};for(var k in p)o[k]=p[k];dataLayer.push(o);if(window.fbq){if(SKY_META[ev])fbq('track',SKY_META[ev]);else fbq('trackCustom',ev);}}
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'',ev=null;if(h.indexOf('tel:')===0)ev='phone_call_click';else if(h.indexOf('mailto:')===0)ev='email_click';else if(h.indexOf('google.com/maps')>-1)ev='get_directions';else if(h.indexOf('instagram.com')>-1)ev='instagram_click';if(ev)skyTrack(ev,{link_url:h});});</script>
 <slot name="head-scripts" />
 <meta charset="utf-8">
@@ -67,6 +82,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT6BKS26" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1156467100307392&ev=PageView&noscript=1" alt=""></noscript>
 <Header home={home} />
 <main id={home ? 'main' : undefined}>
 <slot />
