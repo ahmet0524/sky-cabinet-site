@@ -336,3 +336,4 @@ nav.main a.active{color:var(--leaf);text-decoration:underline;text-underline-off
 .post-body thead th{background:var(--sand);color:var(--navy);font-family:var(--f-display)}
 .post-body tbody td:first-child{font-weight:600;color:var(--ink)}
 @media (max-width:600px){.post-body table{display:block;overflow-x:auto}}
+.towns span a{color:inherit;text-decoration:underline;text-underline-offset:3px}
